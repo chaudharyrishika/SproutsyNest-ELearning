@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings - Admin Panel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0fff4;
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      width: 240px;
+      min-height: 100vh;
+      background: #145a32;
+      color: white;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .sidebar a {
+      padding: 15px 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background: #1e8449;
+    }
+    .main {
+      flex: 1;
+      padding: 20px;
+      margin-left: 240px;
+    }
+    .topbar {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.10);
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    .card h3 {
+      color: #145a32;
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      font-weight: 600;
+      color: #145a32;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 9px;
+      border-radius: 6px;
+      border: 1px solid #b2d8b2;
+      outline: none;
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+    .btn-submit {
+      background: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      font-weight: bold;
+      margin-top: 12px;
+      transition: .3s;
+    }
+    .btn-submit:hover {
+      background: #1e8449;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <a href="vusers">Users</a>
+    <a href="venq">Enquiry</a>
+    <a href="addcourses">Add Courses</a>
+    <a href="vcourses">Courses</a>
+    <a href="settings" style="background:#1e8449;">Settings</a>
+    <a href="logout">Logout</a>
+  </div>
+  <div class="main">
+    <div class="topbar">
+      <h2>Settings</h2>
+      <div><strong>Date:</strong> <span id="date"></span></div>
+    </div>
+    <div class="card">
+      <h3>Account Settings</h3>
+      <form action="/settings" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="OldPassword">Old Password</label>
+          <input type="password" id="adminPassword" name="oldPassword" class="form-control" placeholder="Old password">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="NewPassword">New Password</label>
+          <input type="password" id="adminPassword" name="newPassword" class="form-control" placeholder="New password">
+        </div>
+        <button type="submit" class="btn-submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById("date").innerText = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
