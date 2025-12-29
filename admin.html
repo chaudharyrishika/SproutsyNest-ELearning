@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0fff4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #ffffff;
+      width: 350px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #145a32;
+    }
+
+    .input-group {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: bold;
+      color: #145a32;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #a3e4a6;
+      border-radius: 6px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #27ae60;
+      box-shadow: 0 0 4px rgba(39, 174, 96, 0.4);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #2ecc71;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #27ae60;
+    }
+
+    .forgot {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .forgot a {
+      color: #2ecc71;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <form action="/adminlogin" method="post">
+  <div class="login-container">
+    <h2>Admin Login</h2>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="text" placeholder="Enter Email" name="Email" required/>
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" placeholder="Enter password" name="Password" required/>
+    </div>
+
+    <button class="btn">Login</button>
+  </div>
+  </form>
+</body>
+</html>
